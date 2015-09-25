@@ -1,1 +1,6 @@
+{{#each model.users key="id" as |user|}}
+<ul>
+  <li>{{user.full_name}}</li>
+</ul>
+{{/each}}
 {{outlet}}
