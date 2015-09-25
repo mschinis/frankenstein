@@ -1,6 +1,6 @@
 {{#each model.users key="id" as |user|}}
-<ul>
-  <li>{{user.full_name}}</li>
-</ul>
+{{site-user
+  user=user
+  callUser='callUser'}}
 {{/each}}
 {{outlet}}

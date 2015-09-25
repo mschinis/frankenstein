@@ -17,6 +17,12 @@ export default Ember.Route.extend({
 
         return {
             users
+        };
+    },
+    actions: {
+        callUser(user){
+            console.log('calling user',user);
+            console.log('Do a request to the api in the future :D');
         }
     }
 });
