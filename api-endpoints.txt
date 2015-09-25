@@ -1,0 +1,25 @@
+GET /users
+[
+  {
+    id: Number,
+    name: String,
+    surname: String,
+    phone_number: Number
+  },
+  {
+    id: Number,
+    name: String,
+    surname: String,
+    phone_number: Number
+  }
+]
+
+POST /guest
+[
+  {
+    id: Number,
+    name: String,
+    surname: String,
+    visiting: Number
+  }
+]
