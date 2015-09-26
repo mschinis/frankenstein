@@ -31,7 +31,7 @@ export default Ember.Mixin.create({
      * @return {String}          Full URL
      */
     apiURL(endpoint, version) {
-        return config.apiURL + (version ? `/${version}/` : '/v1/') + (endpoint ? endpoint : '');
+        return config.apiURL + (version ? `/${version}/` : '/') + (endpoint ? endpoint : '');
     },
 
     /**
