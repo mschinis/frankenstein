@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import RequestMixin from '../../mixins/request';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(RequestMixin,{
     model(){
         let users = [
             {
@@ -22,7 +23,14 @@ export default Ember.Route.extend({
     actions: {
         callUser(user){
             console.log('calling user',user);
-            console.log('Do a request to the api in the future :D');
+            this.request({
+                method: 'GET',
+                url: 'http://jsonplaceholder.typicode.com/users'
+            }).then((res)=>{
+                console.log('Done request',res);
+            }).then((res)=>{
+                console.warn('Failed calling user');
+            });
         }
     }
 });
