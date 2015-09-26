@@ -1,24 +1,22 @@
 import Ember from 'ember';
+import User from '../user/model';
 import RequestMixin from '../../mixins/request';
 
 export default Ember.Route.extend(RequestMixin,{
     model(){
-        let users = [
-            {
-                id: 1,
-                full_name: 'Michael Schinis',
-                group: 1
-            },
-            {
-                id: 2,
-                full_name: 'Mattia Asti',
-                group: 1
-            }
-        ];
+        let userPromise = User.find();
+        userPromise.then((users)=>{
+            console.log(`users`,users);
 
-        return {
-            users
-        };
+            return {
+                users : [
+                    {
+                        id: 1,
+                        full_name: 'Michael Schinis'
+                    }
+                ]
+            };
+        });
     },
     actions: {
         callUser(user){
