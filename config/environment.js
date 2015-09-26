@@ -7,6 +7,7 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    apiURL: 'https://guarded-sierra-9410.herokuapp.com',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -26,6 +27,15 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.contentSecurityPolicy = {
+        'default-src': "'none'",
+        'script-src': "'self' https://guarded-sierra-9410.herokuapp.com",
+        'font-src': "'self' https://fonts.gstatic.com data:;",
+        'connect-src': "'self' https://guarded-sierra-9410.herokuapp.com",
+        'img-src': "'self' http://placehold.it https://placeholdit.imgix.net",
+        'style-src': "'self' 'unsafe-inline'",
+        'media-src': "'self'"
+    }
   }
 
   if (environment === 'test') {
