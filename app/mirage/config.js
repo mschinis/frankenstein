@@ -8,12 +8,22 @@ export default function() {
     Note: these only affect routes defined *after* them!
   */
   // this.urlPrefix = '';    // make this `http://localhost:8080`, for example, if your API is on a different server
-  // this.namespace = '';    // make this `api`, for example, if your API is namespaced
+  this.namespace = '/api';    // make this `api`, for example, if your API is namespaced
   // this.timing = 400;      // delay for each request, automatically set to 0 during testing
 
   /*
     Route shorthand cheatsheet
   */
+  // Get all, find, create, call user
+  this.get('users');
+  this.get('user/:id')
+  this.post('users')
+  this.post('users/:id')
+
+  // Get all, find, create guests
+  this.get('guests');
+  this.get('guests/:id');
+  this.post('guests');
   /*
     GET shorthands
 
